@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { get } from "./httpService";
+import axios from "axios";
 
 function App() {
   const [name, setName] = useState("");
   const getServerName = async () => {
-    const { data } = get("");
+    const { data } = await axios.get("/");
     setName(data?.name);
   };
 
